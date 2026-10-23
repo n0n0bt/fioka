@@ -222,53 +222,18 @@ h1 {
 }
 .js .drum { visibility: hidden; }
 
-/* As in the app: no shapes behind the cards, just a thin line of light in
-   the brand colours under them, like a lit glass shelf, with a soft glow and
-   a faint wash rising from it. The colours drift along the line. */
-.drum-shelf {
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--card) * 0.06 - 10px);
-  width: min(1100px, 62vw);
-  height: 70px;
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 0;
-  -webkit-mask: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
-  mask: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
-}
-.drum-shelf::before,
-.drum-shelf::after,
-.drum-shelf span {
+/* The shadow pool under the cards, fading out well inside the hero. */
+.drum::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, var(--pink), var(--violet), var(--cyan), var(--violet), var(--pink), var(--violet), var(--cyan));
-  background-size: 200% 100%;
-  animation: shelf-drift 20s ease-in-out infinite alternate;
-}
-/* The wash. */
-.drum-shelf::before {
-  top: 0;
-  opacity: 0.16;
-  -webkit-mask: linear-gradient(transparent, #000);
-  mask: linear-gradient(transparent, #000);
-}
-/* The glow. */
-.drum-shelf span {
-  height: 8px;
-  bottom: -3px;
-  filter: blur(10px);
-  opacity: 0.7;
-}
-/* The line. */
-.drum-shelf::after { height: 1.5px; opacity: 0.85; }
-
-@keyframes shelf-drift {
-  from { background-position: 0% 0; }
-  to { background-position: 100% 0; }
+  left: 50%;
+  top: 58%;
+  width: min(1400px, 110%);
+  height: 90%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgb(23 21 31 / 0.2), rgb(23 21 31 / 0.08) 45%, transparent);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .drum-search {
@@ -341,7 +306,7 @@ h1 {
 @keyframes ring-turn { to { --ring-turn: 360deg; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .drum-shelf::before, .drum-shelf::after, .drum-shelf span, .drum-card::after { animation: none; }
+  .drum-card::after { animation: none; }
 }
 .drum:focus-visible .drum-card.front::after { box-shadow: 0 0 0 6px rgb(110 107 255 / 0.25); }
 

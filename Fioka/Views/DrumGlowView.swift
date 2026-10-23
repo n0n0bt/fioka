@@ -1,120 +1,58 @@
 import SwiftUI
 
-/// What sits behind the revolver. No panel and no shapes: a frost that rises
-/// from the bottom of the window and thins out upwards, and under the cards a
-/// thin line of light in the logo's colours, like a lit glass shelf, whose
-/// colours drift slowly along it.
+/// What sits behind the revolver: no panel, but a frosted backdrop that is
+/// solid behind the cards and fades to nothing before the window's edges on
+/// every side, tinted with the logo's colours. It calms whatever is behind
+/// (text, windows) without drawing a box.
 ///
-/// Everything fades to clear before the window's edges, so nothing ends in a
-/// line where the window frame cuts it.
+/// Elliptical gradient masks rather than blurred shapes: a blur spills past
+/// the window and its frame cuts it in a straight line; a mask that reaches
+/// clear at the frame's edge cannot. An `EllipticalGradient`'s locations run
+/// from the centre (0) to the frame's edge (1).
 struct DrumGlowView: View {
   /// Off-screen renders (the README and website images) get a painted frost:
   /// NSVisualEffectView blurs what is behind the window, so it draws nothing
-  /// in ImageRenderer. They also hold still.
+  /// in ImageRenderer.
   var painted = false
 
-  @Environment(\.colorScheme) private var colorScheme
-  @State private var drifting = false
-
-  /// How far above the window's bottom the shelf runs: just under the front
-  /// card, whose bottom is CardCarouselView.bottomPadding up.
-  private static let shelfInset: CGFloat = CardCarouselView.bottomPadding - 10
+  /// Fully opaque out to here, then fading to clear at the edge.
+  private static func fade(solidUntil solid: Double) -> some View {
+    EllipticalGradient(
+      stops: [
+        .init(color: .black, location: 0),
+        .init(color: .black, location: solid),
+        .init(color: .black.opacity(0.7), location: (solid + 1) / 2),
+        .init(color: .clear, location: 1)
+      ],
+      center: .init(x: 0.5, y: 0.55)
+    )
+  }
 
   var body: some View {
-    GeometryReader { geometry in
-      let width = min(geometry.size.width * 0.62, 1100)
-      ZStack(alignment: .bottom) {
-        frost
-          .mask { Self.rising }
-        shelf(width: width)
-          .padding(.bottom, Self.shelfInset)
-      }
-      .frame(width: geometry.size.width, height: geometry.size.height)
-    }
-    .allowsHitTesting(false)
-    .onAppear {
-      guard !painted else { return }
-      withAnimation(.easeInOut(duration: 10).repeatForever(autoreverses: true)) {
-        drifting = true
-      }
-    }
-  }
-
-  /// Clear at the top, solid from a little below the middle down; clear in
-  /// the last few points and at both sides.
-  private static var rising: some View {
-    LinearGradient(
-      stops: [
-        .init(color: .clear, location: 0),
-        .init(color: .black.opacity(0.3), location: 0.3),
-        .init(color: .black.opacity(0.85), location: 0.6),
-        .init(color: .black, location: 0.94),
-        .init(color: .clear, location: 1)
-      ],
-      startPoint: .top,
-      endPoint: .bottom
-    )
-    .mask { sides(edge: 0.1) }
-  }
-
-  private static func sides(edge: Double) -> some View {
-    LinearGradient(
-      stops: [
-        .init(color: .clear, location: 0),
-        .init(color: .black, location: edge),
-        .init(color: .black, location: 1 - edge),
-        .init(color: .clear, location: 1)
-      ],
-      startPoint: .leading,
-      endPoint: .trailing
-    )
-  }
-
-  @ViewBuilder
-  private var frost: some View {
-    if painted {
-      Color(white: 0.97).opacity(0.8)
-    } else {
-      VisualEffectView(material: .popover, blendingMode: .behindWindow, state: .active)
-    }
-  }
-
-  /// The logo's colours, twice over so they can slide along the line without
-  /// running out, fading in from both ends.
-  private func colours(width: CGFloat) -> some View {
-    LinearGradient(
-      colors: [Brand.pink, Brand.violet, Brand.cyan, Brand.violet, Brand.pink, Brand.violet, Brand.cyan],
-      startPoint: .leading,
-      endPoint: .trailing
-    )
-    .frame(width: width * 2)
-    .offset(x: drifting ? -width * 0.35 : width * 0.35)
-    .frame(width: width)
-    .clipped()
-    .mask { Self.sides(edge: 0.3) }
-  }
-
-  private func shelf(width: CGFloat) -> some View {
-    let dark = colorScheme == .dark
-    return ZStack(alignment: .bottom) {
-      // A faint wash of the same colours rising from the line.
-      colours(width: width)
-        .frame(height: 70)
-        .mask {
-          LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+    ZStack {
+      // Frosted glass, as macOS's own panels use, fading out at the rim.
+      Group {
+        if painted {
+          Color(white: 0.97).opacity(0.86)
+        } else {
+          VisualEffectView(material: .popover, blendingMode: .behindWindow, state: .active)
         }
-        .opacity(dark ? 0.22 : 0.16)
-      // The glow around the line.
-      colours(width: width)
-        .frame(height: 8)
-        .blur(radius: 10)
-        .opacity(dark ? 0.9 : 0.7)
-        .offset(y: 3)
-      // The line itself.
-      colours(width: width)
-        .frame(height: 1.5)
-        .opacity(dark ? 1 : 0.85)
+      }
+      .mask { Self.fade(solidUntil: 0.55) }
+
+      // The logo's colours over it.
+      LinearGradient(colors: [Brand.pink, Brand.violet, Brand.cyan], startPoint: .leading, endPoint: .trailing)
+        .opacity(0.4)
+        .mask { Self.fade(solidUntil: 0.38) }
+
+      // A soft shadow under the cards, so they lift off the frost.
+      EllipticalGradient(
+        stops: [.init(color: .black.opacity(0.28), location: 0), .init(color: .clear, location: 0.8)],
+        center: .init(x: 0.5, y: 0.62)
+      )
     }
-    .frame(width: width, height: 90, alignment: .bottom)
+    .frame(maxWidth: 1700, maxHeight: .infinity)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .allowsHitTesting(false)
   }
 }
