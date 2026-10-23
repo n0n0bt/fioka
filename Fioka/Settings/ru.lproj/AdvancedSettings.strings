@@ -1,0 +1,10 @@
+"Title" = "Дополнения";
+"TurnOff" = "Выключить";
+"TurnOffDescription" = "Временно игнорировать все новые копировния.\nВы можете использовать эту настройку программно и отключить приложение на время копирования конфиденциальных данных.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# копировать данные\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "Вы также можете кликнуть значок меню с нажатой клавишей ⌥.\nЧтобы игнорировать только следующую копию, кликните с ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# копировать данные";
+"ClearHistoryOnQuit" = "Очищать историю при закрытии";
+"ClearHistoryOnQuitTooltip" = "Автоматически удалять все неприкрепленные записи перед закрытием приложения.";
+"ClearSystemClipboard" = "Также очищать системный буфер обмена";
+"ClearSystemClipboardTooltip" = "Если этот параметр включен, очистка истории также очистит текущий системный буфер обмена.";

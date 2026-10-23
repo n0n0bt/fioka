@@ -1,0 +1,11 @@
+"DeleteKey" = "Pritisnite {deleteKey} za brisanje.";
+"Application" = "Aplikacija:";
+"FirstCopyTime" = "Čas prvega kopiranja:";
+"NumberOfCopies" = "Število kopiranj:";
+"LastCopyTime" = "Čas zadnjega kopiranja:";
+"PinKey" = "Pritisnite {pinKey} za zapenjanje.";
+"UnpinKey" = "Pritisnite {pinKey} za odzapenjanje.";
+"OpenPreview" = "Pritisnite {previewKey} za prikaz predogleda.";
+"ClosePreview" = "Pritisnite {previewKey} za skrivanje predogleda.";
+"Dimensions" = "Dimenzije:";
+"CopyExtractedText" = "Kopiraj izvlečeno besedilo.";

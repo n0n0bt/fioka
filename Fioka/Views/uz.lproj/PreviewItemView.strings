@@ -1,0 +1,11 @@
+"Application" = "Dastur:";
+"FirstCopyTime" = "Nusxalangan vaqti:";
+"LastCopyTime" = "Oxirgi nusxa olingan vaqti:";
+"NumberOfCopies" = "Nusxalar jami soni:";
+"PinKey" = "Biriktirish uchun {pinKey} tugmasini bosing.";
+"UnpinKey" = "Biriktirishni o‘chirish uchun {pinKey} tugmasini bosing.";
+"DeleteKey" = "O‘chirish uchun {deleteKey} tugmasini bosing.";
+"OpenPreview" = "Oldindan ko‘rishni ko‘rsatish uchun {previewKey} tugmasini bosing.";
+"ClosePreview" = "Oldindan ko‘rishni yashirish uchun {previewKey} tugmasini bosing.";
+"Dimensions" = "O'lchamlar:";
+"CopyExtractedText" = "Ajratib olingan matnni nusxalash.";

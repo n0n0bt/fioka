@@ -1,0 +1,11 @@
+"Application" = "Application:";
+"FirstCopyTime" = "First copy time:";
+"LastCopyTime" = "Last copy time:";
+"NumberOfCopies" = "Number of copies:";
+"Dimensions" = "Dimensions:";
+"PinKey" = "Press {pinKey} to pin.";
+"UnpinKey" = "Press {pinKey} to unpin.";
+"DeleteKey" = "Press {deleteKey} to delete.";
+"OpenPreview" = "Press {previewKey} to show preview.";
+"ClosePreview" = "Press {previewKey} to hide preview.";
+"CopyExtractedText" = "Copy extracted text.";

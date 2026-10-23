@@ -1,0 +1,11 @@
+"Application" = "";
+"FirstCopyTime" = "";
+"LastCopyTime" = "";
+"NumberOfCopies" = "";
+"PinKey" = "";
+"DeleteKey" = "";
+"UnpinKey" = "";
+"OpenPreview" = "Πατήστε {previewKey} για εμφάνιση της προεπισκόπησης.";
+"ClosePreview" = "Πατήστε {previewKey} για απόκρυψη της προεπισκόπησης.";
+"Dimensions" = "Διαστάσεις:";
+"CopyExtractedText" = "Αντιγραφή εξαγμένου κειμένου.";

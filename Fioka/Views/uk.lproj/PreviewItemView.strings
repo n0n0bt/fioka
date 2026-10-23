@@ -1,0 +1,11 @@
+"Application" = "Додаток:";
+"FirstCopyTime" = "Час першої копії:";
+"LastCopyTime" = "Час останньої копії:";
+"NumberOfCopies" = "Кількість копій:";
+"PinKey" = "Натисніть {pinKey}, щоб кріпити.";
+"UnpinKey" = "Натисніть {pinKey}, щоб відкріпити.";
+"DeleteKey" = "Натисніть {deleteKey}, щоб видалити.";
+"OpenPreview" = "Натисніть {previewKey}, щоб показати попередній перегляд.";
+"ClosePreview" = "Натисніть {previewKey}, щоб приховати попередній перегляд.";
+"Dimensions" = "Розміри:";
+"CopyExtractedText" = "Скопіювати розпізнаний текст.";

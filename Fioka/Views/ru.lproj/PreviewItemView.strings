@@ -1,0 +1,11 @@
+"Application" = "Приложение:";
+"FirstCopyTime" = "Время первого копирования:";
+"LastCopyTime" = "Время последнего копирования:";
+"NumberOfCopies" = "Количество копирований:";
+"PinKey" = "Нажмите {pinKey}, чтобы прикрепить.";
+"UnpinKey" = "Нажмите {pinKey}, чтобы открепить.";
+"DeleteKey" = "Нажмите {deleteKey}, чтобы удалить.";
+"OpenPreview" = "Нажмите {previewKey}, чтобы показать предпросмотр.";
+"ClosePreview" = "Нажмите {previewKey}, чтобы скрыть предпросмотр.";
+"Dimensions" = "Размеры:";
+"CopyExtractedText" = "Скопировать извлеченный текст.";

@@ -1,0 +1,8 @@
+xcuserdata/
+Fioka.xcodeproj/project.xcworkspace/xcshareddata
+.idea
+.DS_Store
+Fioka/.DS_Store
+
+# local build output
+build/

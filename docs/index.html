@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fioka: copy, convert, capture on your Mac</title>
+  <meta name="description" content="Fioka keeps your Mac's clipboard history as cards, converts files while you drag them, and edits screenshots. Free and open source.">
+  <meta property="og:title" content="Fioka">
+  <meta property="og:description" content="Copy, convert, capture. Clipboard history, a converter that works mid-drag, and a screenshot editor for your Mac.">
+  <meta property="og:image" content="https://n0n0bt.github.io/fioka/assets/banner.png">
+  <meta property="og:url" content="https://n0n0bt.github.io/fioka/">
+  <link rel="canonical" href="https://n0n0bt.github.io/fioka/">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Fioka home">
+      <img class="logo" src="assets/banner.png" alt="Fioka" width="1600" height="801">
+    </a>
+    <nav aria-label="Main">
+      <a href="#clipboard">Features</a>
+      <a href="#install">Install</a>
+      <a class="nav-github" href="https://github.com/n0n0bt/fioka">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- The hero is a Mac screen behind the icon's fluted glass. The card bar
+         slides up from its bottom edge, the way ⇧⌘V opens it in the app. -->
+    <section class="stage glass" id="top" aria-labelledby="hero-title">
+      <div class="stage-copy">
+        <div class="hero-logo"><img src="assets/banner.png" alt="" width="1600" height="801"></div>
+        <p class="platform"><svg class="apple" viewBox="0 0 814 1000" aria-hidden="true"><path fill="currentColor" d="M788 341c-6 4-108 62-108 190 0 148 130 200 134 202-1 3-21 72-69 142-43 62-88 124-156 124s-86-40-165-40c-77 0-104 41-166 41s-105-57-155-127C46 790 0 663 0 543c0-194 126-297 250-297 66 0 121 43 162 43 39 0 101-46 176-46 29 0 132 3 200 98zM554 159c31-37 53-88 53-139 0-7-1-14-2-20-50 2-110 34-147 76-28 32-55 83-55 135 0 8 1 16 2 18 3 1 9 2 14 2 45 0 102-30 135-72z"/></svg><span>For macOS 14 and later</span></p>
+        <h1 id="hero-title">Copy, convert, capture.</h1>
+        <p class="lede">Fioka keeps your clipboard history as cards along the bottom of your screen, converts files while you drag them, and turns screenshots into something worth sending.<br><span class="lede-note">Free and open source.</span></p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/n0n0bt/fioka/releases/latest"><svg class="apple" viewBox="0 0 814 1000" aria-hidden="true"><path fill="currentColor" d="M788 341c-6 4-108 62-108 190 0 148 130 200 134 202-1 3-21 72-69 142-43 62-88 124-156 124s-86-40-165-40c-77 0-104 41-166 41s-105-57-155-127C46 790 0 663 0 543c0-194 126-297 250-297 66 0 121 43 162 43 39 0 101-46 176-46 29 0 132 3 200 98zM554 159c31-37 53-88 53-139 0-7-1-14-2-20-50 2-110 34-147 76-28 32-55 83-55 135 0 8 1 16 2 18 3 1 9 2 14 2 45 0 102-30 135-72z"/></svg>Get it for Mac</a>
+          <a class="button" href="#install">Install</a>
+        </div>
+        <p class="hint">Press <kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> to open it again</p>
+      </div>
+      <div class="bar" aria-hidden="true">
+        <img src="assets/card-bar.png?v=6" alt="" width="1872" height="566">
+      </div>
+      <p class="visually-hidden">The card bar: a row of recent copies, including a note, a code snippet, a link, a photo, a colour and a PDF, each tinted by the app it came from.</p>
+    </section>
+
+    <section class="feature" id="clipboard" aria-labelledby="clipboard-title">
+      <div class="feature-copy">
+        <h2 id="clipboard-title">Your clipboard, laid out as cards</h2>
+        <p>Everything you copy lands in the bar: text, code, links, images, colours and files, each card tinted by the app it came from. The newest faces you; the rest wait on a drum to either side, and the arrow keys or a swipe turn it.</p>
+        <dl class="keys">
+          <div><dt><kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd></dt><dd>Open the bar</dd></div>
+          <div><dt><kbd>←</kbd><kbd>→</kbd></dt><dd>Turn the drum</dd></div>
+          <div><dt><kbd>↵</kbd></dt><dd>Paste into the app you were in</dd></div>
+          <div><dt><kbd>⌘</kbd><kbd>1</kbd>–<kbd>9</kbd></dt><dd>Pick by number</dd></div>
+          <div><dt><kbd>⌥</kbd><kbd>P</kbd></dt><dd>Pin a card to keep it</dd></div>
+          <div><dt><kbd>⌘</kbd><kbd>K</kbd></dt><dd>Convert, resize, AirDrop, reveal in Finder</dd></div>
+        </dl>
+        <p class="aside">Start typing to search. Nothing to click first.</p>
+      </div>
+      <figure class="feature-visual zoom glass">
+        <img src="assets/card-bar.png?v=6" alt="The drum close up: a checklist from Notes facing you, with a link from Safari and a photo from Preview turned away on either side." loading="lazy">
+      </figure>
+    </section>
+
+    <section class="feature flip" id="wheel" aria-labelledby="wheel-title">
+      <div class="feature-copy">
+        <h2 id="wheel-title">Convert files mid-drag</h2>
+        <p>Start dragging any file, from Finder, the desktop or another app, and tap a key. A wheel opens under the cursor. Drop on a slice, and the result is saved next to the original.</p>
+        <div class="switcher" role="group" aria-label="Wheels">
+          <button type="button" class="cap" data-mode="formats" aria-pressed="true"><kbd>⇧</kbd><span>Formats</span></button>
+          <button type="button" class="cap" data-mode="tools" aria-pressed="false"><kbd>⌘</kbd><span>Tools</span></button>
+          <button type="button" class="cap" data-mode="actions" aria-pressed="false"><kbd>⌃</kbd><span>Actions</span></button>
+        </div>
+        <p class="aside on-pointer">Try the keys on your keyboard, too. <kbd>Esc</kbd> closes the wheel in the app.</p>
+        <dl class="kinds">
+          <div><dt>Images</dt><dd>PNG, JPEG, HEIC, WebP, TIFF, AVIF, BMP, PDF. Compress, resize, combine into one PDF, strip metadata, copy the text in them.</dd></div>
+          <div><dt>Video</dt><dd>MP4, MOV, M4V, GIF, audio only. Compress, 720p, mute, save a frame.</dd></div>
+          <div><dt>Audio</dt><dd>M4A, WAV, AIFF, FLAC, ALAC. Compress, mono, normalize.</dd></div>
+          <div><dt>PDF</dt><dd>Pages as images, text, Word. Merge, split, rotate, compress.</dd></div>
+          <div><dt>Documents</dt><dd>Word, RTF, ODT, HTML and plain text, to each other and to PDF.</dd></div>
+          <div><dt>Also</dt><dd>Subtitles between SRT and VTT, zip and unzip, AirDrop, copy path, open in Terminal.</dd></div>
+        </dl>
+      </div>
+      <figure class="feature-visual wheel" aria-live="polite">
+        <img id="wheel-image" src="assets/wheel-formats.png" alt="The formats wheel: JPEG highlighted, with PDF, HEIC, BMP, TIFF and AVIF around it." width="500" height="550">
+      </figure>
+    </section>
+
+    <!-- A pretend Mac desktop to try the gesture on: drag a file with the
+         mouse, press a modifier mid-drag, drop on a slice. Images convert for
+         real, in the browser; other files show what the app would save. -->
+    <section class="try" id="try" aria-labelledby="try-title">
+      <h2 id="try-title">Try it on this desktop</h2>
+      <p class="try-lede on-touch">Tap a file, then tap <kbd>⇧</kbd> for formats, <kbd>⌘</kbd> for tools or <kbd>⌃</kbd> for actions at the bottom of the screen, and tap a slice. On a Mac you would hold the file and press the key; you can do that here too, dragging with one finger and tapping a key with another. The photo converts for real. Double-tap a new file to save it.</p>
+      <p class="try-lede on-pointer">Drag a file the way you would in Finder. While you are still holding it, press <kbd>⇧</kbd> for formats, <kbd>⌘</kbd> for tools or <kbd>⌃</kbd> for actions, then let go over a slice. The photo converts for real, in your browser. Double-click a new file to save it.</p>
+
+      <div class="desktop" id="desktop" aria-label="Demo desktop">
+        <div class="menubar" aria-hidden="true">
+          <span class="menubar-app">Finder</span>
+          <span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Window</span>
+          <span class="menubar-right">
+            <!-- Fioka's menu bar symbol: the outlined F. -->
+            <svg viewBox="0 0 16 16" width="15" height="15"><path d="M4.6 2h7.2a1.6 1.6 0 0 1 0 3.2H7.8v1.6h2.6a1.6 1.6 0 0 1 0 3.2H7.8v2.4a1.6 1.6 0 0 1-3.2 0V3.6A1.6 1.6 0 0 1 4.6 2z" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span id="clock"></span>
+          </span>
+        </div>
+        <div class="files" id="files" role="listbox" aria-label="Files on the desktop"></div>
+        <div class="live-wheel" id="live-wheel" hidden>
+          <svg id="wheel-svg" viewBox="0 0 420 420" aria-hidden="true"></svg>
+          <p class="live-caption" id="live-caption"></p>
+        </div>
+        <div class="toast" id="toast" role="status" hidden>
+          <img src="assets/icon-256.png" alt="" width="34" height="34">
+          <div><b>Fioka</b><p id="toast-text"></p></div>
+        </div>
+        <p class="coach" id="coach" aria-live="polite"></p>
+        <div class="keystrip on-touch" role="group" aria-label="Modifier keys">
+          <button type="button" class="touch-key" data-mode="formats">⇧</button>
+          <button type="button" class="touch-key" data-mode="tools">⌘</button>
+          <button type="button" class="touch-key" data-mode="actions">⌃</button>
+        </div>
+      </div>
+      <p class="try-note on-pointer">With the keyboard alone, select a file and press the key. You can also drop your own files on the desktop.</p>
+    </section>
+
+    <section class="feature" id="editor" aria-labelledby="editor-title">
+      <div class="feature-copy">
+        <h2 id="editor-title">Screenshots, ready to send</h2>
+        <p>Press <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd><kbd>4</kbd>, pick an area or a window, and the capture opens in an editor. Mark it up, hide what is private, put it on a background, and copy it.</p>
+        <dl class="tools">
+          <div><dt>Annotate</dt><dd>Draw, line, arrow, box, ellipse, highlight, text, numbered steps</dd></div>
+          <div><dt>Hide and focus</dt><dd>Blur, pixelate, spotlight</dd></div>
+          <div><dt>Frame</dt><dd>Crop, gradient or blurred backgrounds, padding, shadow, corner radius, and sizes for 1:1, 4:3, 16:9 and 9:16 posts</dd></div>
+        </dl>
+      </div>
+      <figure class="feature-visual">
+        <img src="editor.png" alt="An exported screenshot: a settings window with the email and card number blurred, three numbered steps and an arrow to the Save button, on a pink-to-cyan background." loading="lazy">
+      </figure>
+    </section>
+
+    <section class="smallprint" aria-label="More">
+      <div>
+        <h3>Text from anything on screen</h3>
+        <p>Press <kbd>⌘</kbd><kbd>⇧</kbd><kbd>2</kbd> and drag over a video, an image or an interface that will not let you select. The text goes straight to your clipboard.</p>
+      </div>
+      <div>
+        <h3>Nothing leaves your Mac</h3>
+        <p>Every conversion runs on macOS's own frameworks. No account, no upload, no limit on how many files you convert.</p>
+      </div>
+      <div>
+        <h3>Free and open source</h3>
+        <p>MIT licensed, built on <a href="https://github.com/p0deje/Maccy">Maccy</a> by Alex Rodionov. Read the code, change it, send a pull request.</p>
+      </div>
+    </section>
+
+    <section class="install" id="install" aria-labelledby="install-title">
+      <h2 id="install-title">Install</h2>
+      <p>For macOS 14 and later, on Apple silicon and Intel.</p>
+      <ol>
+        <li>
+          <p>Download the <b>.dmg</b> from the <a href="https://github.com/n0n0bt/fioka/releases/latest">latest release</a>, open it and drag Fioka to Applications.</p>
+        </li>
+        <li>
+          <p>Open Fioka. It is not notarized by Apple, so macOS first says it cannot check it: click <b>Done</b>, then in System Settings, under Privacy &amp; Security, click <b>Open Anyway</b>. Only the first time.</p>
+        </li>
+        <li>
+          <p>In the same pane, turn on <b>Accessibility</b> so Fioka can paste, and <b>Screen Recording</b> for screenshots and text capture.</p>
+        </li>
+        <li>
+          <p>Press <kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd>. Coming from Maccy? Your history, settings and shortcuts come along.</p>
+        </li>
+      </ol>
+      <p class="aside">Rather build it yourself? With Xcode 26 or later:</p>
+      <div class="code">
+        <pre><code id="install-code">git clone https://github.com/n0n0bt/fioka.git
+cd fioka
+./install.sh</code></pre>
+        <button type="button" class="copy" data-copy="install-code">Copy</button>
+      </div>
+      <p class="aside">Signing tips and everything else are in the <a href="https://github.com/n0n0bt/fioka#install">README</a>.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img class="footer-mark" src="assets/banner.png" alt="Fioka" width="1600" height="801">
+    <p>Fioka is Macedonian for drawer (фиока). Made by Naumche Joshevski, based on Maccy by Alex Rodionov.</p>
+    <nav aria-label="Footer">
+      <a href="https://github.com/n0n0bt/fioka">GitHub</a>
+      <a href="https://github.com/n0n0bt/fioka/issues">Report an issue</a>
+      <a href="https://github.com/n0n0bt/fioka/blob/main/LICENSE">MIT license</a>
+    </nav>
+  </footer>
+
+  <script src="site.js"></script>
+  <script src="desktop.js"></script>
+</body>
+</html>

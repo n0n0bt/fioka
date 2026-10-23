@@ -1,0 +1,10 @@
+"Title" = "Geavanceerd";
+"TurnOff" = "Zet uit";
+"TurnOffDescription" = "Negeer tijdelijk alle nieuwe kopieën.\nJe zult het waarschijnlijk programmatisch gebruiken en de apps uitschakelen tijdens het kopiëren van gevoelige gegevens.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# kopieer data\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "Je kunt ook op het menu-icoontje klikken terwijl je ⌥ ingedrukt houdt.\nOm alleen de volgende kopie te negeren, klik met ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# kopieer data";
+"ClearHistoryOnQuit" = "Wis geschiedenis bij afsluiten";
+"ClearHistoryOnQuitTooltip" = "Verwijder automatisch alle niet vastgemaakte items voordat u de app afsluit.";
+"ClearSystemClipboard" = "Wis ook het systeemklembord";
+"ClearSystemClipboardTooltip" = "Als dit is ingeschakeld, wordt bij het wissen van de geschiedenis ook het huidige klembord van het systeem gewist..";

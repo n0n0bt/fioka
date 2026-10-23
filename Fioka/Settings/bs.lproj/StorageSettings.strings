@@ -1,0 +1,14 @@
+"Title" = "Pohrana";
+"Save" = "Snimi:";
+"Files" = "Datoteke";
+"Images" = "Slike";
+"Text" = "Tekst";
+"SaveDescription" = "Promjeni koji tipovi sadržaja trebaju biti snimljeni.";
+"Size" = "Veličina:";
+"SizeTooltip" = "Broj stavki u zadržanih u historiji.\nStandardno: 200.";
+"SortBy" = "Poredaj po:";
+"LastCopiedAt" = "Vrijeme zadnje kopije";
+"FirstCopiedAt" = "Vrijeme prve kopije";
+"NumberOfCopies" = "Broj kopija";
+"SortByTooltip" = "Standardno: Vrijeme zadnje kopije.";
+"CurrentSizeTooltip" = "Trenutna veličina na disku.";

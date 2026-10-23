@@ -1,0 +1,41 @@
+{
+  "configurations" : [
+    {
+      "id" : "AF4E53A3-F52D-4A3E-B9EF-EF728B4C1AAA",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "enable-testing"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Fioka.xcodeproj",
+      "identifier" : "DAEE38421E3DBEB100DD2966",
+      "name" : "Fioka"
+    },
+    "testRepetitionMode" : "retryOnFailure"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Fioka.xcodeproj",
+        "identifier" : "DA360DAF1E3DF137005C6F6B",
+        "name" : "FiokaTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Fioka.xcodeproj",
+        "identifier" : "DA0EE7B5204657830025FC60",
+        "name" : "FiokaUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

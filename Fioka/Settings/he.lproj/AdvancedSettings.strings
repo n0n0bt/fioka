@@ -1,0 +1,10 @@
+"Title" = "מתקדם";
+"TurnOff" = "כיבוי";
+"TurnOffDescription" = "להתעלם זמנית מכל העותקים החדשים.\nכנראה שזה ישמש אותך במהלך פיתוח ולהשבית יישום במהלך העתקת נתונים רגישים.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# העתקת נתונים\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "אפשר ללחוץ על סמל התפריט תוך הזחקה של ⌥.\nכדי להתעלם רק מהעותק הבא, יש ללחוץ עם העכבר תוך החזקה של ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# העתקת נתונים";
+"ClearHistoryOnQuit" = "פינוי היסטוריה עם היציאה";
+"ClearHistoryOnQuitTooltip" = "להסיר את כל הפריטים שאינם נעוצים בטרם יציאה מהיישום.";
+"ClearSystemClipboard" = "פינוי לוח הגזירים של המערכת בנוסף";
+"ClearSystemClipboardTooltip" = "כאשר ההגדרה פעילה, פינוי ההיסטוריה יפנה גם את לוח הגזירים הנוכחי של המערכת.";

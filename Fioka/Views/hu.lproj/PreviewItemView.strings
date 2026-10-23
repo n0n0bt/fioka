@@ -1,0 +1,11 @@
+"Application" = "Alkalmazás:";
+"FirstCopyTime" = "Első másolás ideje:";
+"LastCopyTime" = "Utolsó másolás ideje:";
+"NumberOfCopies" = "Másolások száma:";
+"PinKey" = "Nyomd meg a {pinKey} gombokat a kitűzéshez.";
+"UnpinKey" = "Nyomd meg a {pinKey} gombokat a kitűzés levételéhez.";
+"DeleteKey" = "Nyomd meg a {deleteKey} gombokat a törléshez.";
+"OpenPreview" = "Nyomja meg a {previewKey} gombot az előnézet megjelenítéséhez.";
+"ClosePreview" = "Nyomja meg a {previewKey} gombot az előnézet elrejtéséhez.";
+"Dimensions" = "Méretek:";
+"CopyExtractedText" = "Kinyert szöveg másolása.";

@@ -1,0 +1,11 @@
+"Application" = "Aplicație:";
+"FirstCopyTime" = "Data primei copii:";
+"LastCopyTime" = "Data ultimei copii:";
+"NumberOfCopies" = "Numărul de copii:";
+"PinKey" = "Apasă {pinKey} pentru a fixa.";
+"UnpinKey" = "Apasă {pinKey} pentru a detașa.";
+"DeleteKey" = "Apasă {deleteKey} pentru a șterge.";
+"OpenPreview" = "Apasă {previewKey} pentru a afișa previzualizarea.";
+"ClosePreview" = "Apasă {previewKey} pentru a ascunde previzualizarea.";
+"Dimensions" = "Dimensiuni:";
+"CopyExtractedText" = "Copiază textul extras.";

@@ -1,0 +1,7 @@
+"Title" = "Przypięte";
+"Key" = "Klucz";
+"Alias" = "Tytuł";
+"Content" = "Treść";
+"ContentIsNotText" = "Zawartość nieedytowalna (obraz lub plik)";
+"RichTextEditWarning" = "Edycja spowoduje usunięcie całego formatowania.";
+"PinCustomizationDescription" = "Można dostosować klawisz skrótu, tytuł i zawartość dowolnego przypiętego elementu.\nAby edytować, kliknij dwukrotnie element i wprowadź nową wartość. Należy pamiętać, że można zmienić tylko zwykły tekst.";

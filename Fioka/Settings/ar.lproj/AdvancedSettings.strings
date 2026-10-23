@@ -1,0 +1,10 @@
+"Title" = "متقدم";
+"TurnOff" = "إيقاف";
+"TurnOffDescription" = "تجاهل جميع النسخ الجديدة مؤقتًا.\nمن المرجح أن تستخدمه برمجيًا وتعطل التطبيق أثناء نسخ البيانات الحساسة.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\nنسخ البيانات #\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "يمكنك أيضًا النقر على أيقونة القائمة مع ⌥ مضغوط.\nلتجاهل النسخة التالية فقط، انقر بـ ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\nنسخ البيانات #";
+"ClearHistoryOnQuit" = "مسح السجل عند الخروج";
+"ClearHistoryOnQuitTooltip" = "إزالة جميع العناصر غير المثبتة تلقائيًا قبل إغلاق التطبيق.";
+"ClearSystemClipboard" = "مسح حافظة النظام أيضًا";
+"ClearSystemClipboardTooltip" = "عند التمكين، سيؤدي مسح السجل أيضًا إلى مسح حافظة النظام الحالية.";

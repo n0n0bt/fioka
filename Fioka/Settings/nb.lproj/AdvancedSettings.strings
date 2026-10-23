@@ -1,0 +1,10 @@
+"Title" = "Avansert";
+"TurnOff" = "Deaktiver";
+"TurnOffDescription" = "Midlertidig ignorer alle nye kopier.\nDu vil mest sannsynlig bruke det programmatisk og deaktivere programmet ved kopiering av sensitive data.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# kopier data\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "Du kan også klikke på menyikonet med ⌥ trykket.\nFor å ignorere bare den neste kopien, klikk med ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# kopier data";
+"ClearHistoryOnQuit" = "Tøm historikk når du slutter";
+"ClearHistoryOnQuitTooltip" = "Fjern alle ikke-festede elementer automatisk før du avslutter applikasjonen.";
+"ClearSystemClipboard" = "Tøm systemets utklippstavle også";
+"ClearSystemClipboardTooltip" = "Når den er aktivert, vil tømming av loggen også tømme gjeldende systemutklippstavle.";

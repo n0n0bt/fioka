@@ -1,0 +1,10 @@
+"Title" = "Napredno";
+"TurnOff" = "Ugasi";
+"TurnOffDescription" = "Privremeno zanemari sve nove kopije.\nKoristi programski i onemogućiti aplikaciju dok kopirate osjetljive podatke.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# kopirati podatke\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "Takođe možeš kliknuti na ikonu menija sa pritisnutim ⌥.\nDa zanemariš samo sljedeću kopiju, kliknite sa ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# kopirati podatke";
+"ClearHistoryOnQuit" = "Očisti historiju pri izlasku iz aplikacije";
+"ClearHistoryOnQuitTooltip" = "Automatski ukloni sve zakačene stavke prije zatvaranja aplikacije.";
+"ClearSystemClipboard" = "Očistite i sistemski međuspremnik";
+"ClearSystemClipboardTooltip" = "Kada je omogućeno, brisanje historije će također izbrisati trenutni sistemski međuspremnik.";

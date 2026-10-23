@@ -1,0 +1,10 @@
+"Title" = "詳細";
+"TurnOff" = "オフにする";
+"TurnOffDescription" = "このオプションを有効にすると、一時的に全ての新規コピーを無視します。\nまた、重要なデータをコピーする場合は、下記のコマンドを用いてFiokaを無効にすることもできます。";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# データコピー\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "⌥ を押したままメニュー アイコンをクリックすることもできます。\n次のコピーだけを無視するには、⌥⇧でクリックします。";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# データコピー";
+"ClearHistoryOnQuit" = "終了時、履歴をクリアする";
+"ClearHistoryOnQuitTooltip" = "アプリケーションを終了する前に、ピン留めされていない項目をすべて自動的に削除します。";
+"ClearSystemClipboard" = "システムのクリップボードもクリア";
+"ClearSystemClipboardTooltip" = "有効にすると、履歴をクリアすると現在のシステム クリップボードもクリアされます。";

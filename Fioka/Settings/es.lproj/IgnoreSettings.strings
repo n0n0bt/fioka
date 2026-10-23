@@ -1,0 +1,9 @@
+"Title" = "Exclusiones";
+"ApplicationsTab" = "Aplicaciones";
+"IgnoredAppsDescription" = "Es posible excluir la copia desde ciertas aplicaciones.\nAún así, esta función no es a prueba de balas. Por lo que, de ser posible, se aconseja optar en su lugar por una exclusión en base a su tipo.";
+"IgnoredAllAppsExceptListed" = "Excluir todas las aplicaciones excepto las añadidas";
+"PasteboardTypesTab" = "Tipos";
+"IgnoredPasteboardTypesDescription" = "Es posible excluir la copia en base al tipo de portapapeles.\nPor defecto, ya se excluyen ciertos tipos de portapapeles usados por algunas aplicaciones populares. Puedes borrar o añadir tantos como desees.";
+"IgnoredPasteboardTypesReset" = "Restablecer";
+"RegexpTab" = "Expresiones regulares";
+"IgnoredRegexpsDescription" = "Es posible excluir la copia en base a expresiones regulares.";

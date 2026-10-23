@@ -1,0 +1,10 @@
+"Title" = "Gelişmiş";
+"TurnOff" = "Kapat";
+"TurnOffDescription" = "Geçici olarak tüm yeni kopyaları yok say.\nBunu, büyük olasılıkla programsal olarak kullanırsınız ve önemli verilerinizi kopyalarken uygulamayı devre dışı bırakırsınız.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# verileri kopyala\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "Aynı zamanda, ⌥ basılıyken menü simgesine tıklayabilirsiniz.\nYalnızca sonraki kopyayı yok saymak için ⌥⇧ ile tıklayın.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# verileri kopyala";
+"ClearHistoryOnQuit" = "Çıkışta geçmişi temizle";
+"ClearHistoryOnQuitTooltip" = "Uygulamadan çıkmadan önce tüm iğnesi çıkarılmış ögeleri kendiliğinden kaldır.";
+"ClearSystemClipboard" = "Sistem panosunu da temizle";
+"ClearSystemClipboardTooltip" = "Etkinleştirildiğinde, geçmişin temizlenmesi mevcut sistem panosunu da temizler.";

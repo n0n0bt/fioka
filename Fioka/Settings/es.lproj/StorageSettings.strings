@@ -1,0 +1,14 @@
+"Title" = "Almacenamiento";
+"Save" = "Almacenar:";
+"Files" = "Archivos";
+"Images" = "Imágenes";
+"Text" = "Texto";
+"SaveDescription" = "Cambiar qué tipos de contenidos deben ser almacenados.";
+"Size" = "Tamaño máximo:";
+"SizeTooltip" = "Número de elementos a almacenar en el historial.\nPor defecto: 200.";
+"CurrentSizeTooltip" = "Tamaño actual en disco.";
+"SortBy" = "Ordenar por:";
+"LastCopiedAt" = "Más nuevos, primero";
+"FirstCopiedAt" = "Más antiguos, primero";
+"NumberOfCopies" = "Número de copias";
+"SortByTooltip" = "Por defecto: Más nuevos, primero.";

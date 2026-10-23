@@ -1,0 +1,10 @@
+"Title" = "Розширені опції";
+"TurnOff" = "Вимкнути";
+"TurnOffDescription" = "Тимчасово ігноруйте всі нові копії.\nВи, ймовірно, використаєте це програмно та вимкнете програму під час копіювання конфіденційних даних.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# копіювати данні\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "Ви також можете натиснути значок меню, утримуючи ⌥.\nЩоб проігнорувати лише наступну копію, натисніть ⌥⇧.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# копіювати данні";
+"ClearHistoryOnQuit" = "Очистити історію після виходу";
+"ClearHistoryOnQuitTooltip" = "Автоматично видаляйте всі незакріплені елементи перед виходом із програми.";
+"ClearSystemClipboard" = "Також очистіть системний буфер обміну";
+"ClearSystemClipboardTooltip" = "Якщо ввімкнено, очищення історії також очистить поточний системний буфер обміну.";

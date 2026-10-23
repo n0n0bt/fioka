@@ -1,0 +1,11 @@
+"Application" = "اپلیکیشن:";
+"FirstCopyTime" = "زمان اولین کپی:";
+"LastCopyTime" = "آخرین زمان کپی:";
+"NumberOfCopies" = "تعداد کپی‌ها:";
+"PinKey" = "برای سنجاق کردن، کلید {pinKey} را فشار دهید.";
+"DeleteKey" = "برای حذف، کلید {deleteKey} را فشار دهید.";
+"UnpinKey" = "برای برداشتن سنجاق، کلید {pinKey} را فشار دهید.";
+"OpenPreview" = "برای نمایش پیش‌نمایش، کلید {previewKey} را فشار دهید.";
+"ClosePreview" = "برای پنهان کردن پیش‌نمایش، کلید {previewKey} را فشار دهید.";
+"Dimensions" = "ابعاد:";
+"CopyExtractedText" = "متن استخراج‌شده را کپی کنید.";

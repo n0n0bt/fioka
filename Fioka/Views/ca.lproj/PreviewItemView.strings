@@ -1,0 +1,11 @@
+"Application" = "";
+"FirstCopyTime" = "";
+"LastCopyTime" = "";
+"NumberOfCopies" = "";
+"PinKey" = "";
+"DeleteKey" = "";
+"UnpinKey" = "";
+"OpenPreview" = "Prem {previewKey} per mostrar la previsualització.";
+"ClosePreview" = "Prem {previewKey} per amagar la previsualització.";
+"Dimensions" = "Dimensions:";
+"CopyExtractedText" = "Copia el text extret.";

@@ -1,0 +1,11 @@
+"Application" = "Aplikaĵo:";
+"FirstCopyTime" = "Unue kopiita:";
+"LastCopyTime" = "Laste kopiita:";
+"NumberOfCopies" = "Nombro de kopioj:";
+"PinKey" = "Premu {pinKey} por fiksi.";
+"DeleteKey" = "Premu {deleteKey} por forigi.";
+"UnpinKey" = "Premu {pinKey} por malfiksi.";
+"OpenPreview" = "Premu {previewKey} por montri la antaŭrigardon.";
+"ClosePreview" = "Premu {previewKey} por kaŝi la antaŭrigardon.";
+"Dimensions" = "Dimensioj:";
+"CopyExtractedText" = "Kopii eltiritan tekston.";

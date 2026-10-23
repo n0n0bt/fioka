@@ -1,0 +1,10 @@
+"Title" = "ขั้นสูง";
+"TurnOff" = "ปิด";
+"TurnOffDescription" = "ไม่สนใจการคัดลอกทั้งหมดชั่วคราว.\nดูเหมือนว่าคุณตั้งค่าปิดการทำงานแอปขณะคัดลอกข้อมูลสำคัญ";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# คัดลอกข้อมูล\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "คุณยังสามารถคลิกไอคอนเมนูโดยกด ⌥\nหากต้องการละเว้นเฉพาะสำเนาถัดไป ให้คลิกด้วย ⌥⇧";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# คัดลอกข้อมูล";
+"ClearHistoryOnQuit" = "ล้างประวัติเมื่อออก";
+"ClearHistoryOnQuitTooltip" = "ลบรายการที่เลิกปักหมุดทั้งหมดออกโดยอัตโนมัติก่อนออกจากแอปพลิเคชัน";
+"ClearSystemClipboard" = "ล้างคลิปบอร์ดของระบบด้วย";
+"ClearSystemClipboardTooltip" = "เมื่อเปิดใช้งาน การล้างประวัติจะเป็นการล้างคลิปบอร์ดของระบบปัจจุบันด้วย";

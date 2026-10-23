@@ -1,0 +1,6 @@
+project: Fioka.xcodeproj
+retain_objc_accessible: true
+schemes:
+- Fioka
+targets:
+- Fioka

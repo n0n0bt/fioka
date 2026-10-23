@@ -1,0 +1,11 @@
+"Application" = "Aplicação:";
+"FirstCopyTime" = "Data da primeira cópia:";
+"LastCopyTime" = "Data da última cópia:";
+"PinKey" = "Pressione {pinKey} para fixar.";
+"DeleteKey" = "Pressione {deleteKey} para apagar.";
+"NumberOfCopies" = "Quantidade de cópias:";
+"UnpinKey" = "Pressione {pinKey} para desafixar.";
+"OpenPreview" = "Pressione {previewKey} para mostrar a pré-visualização.";
+"ClosePreview" = "Pressione {previewKey} para ocultar a pré-visualização.";
+"Dimensions" = "Dimensões:";
+"CopyExtractedText" = "Copiar texto extraído.";

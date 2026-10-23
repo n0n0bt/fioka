@@ -1,0 +1,11 @@
+"Application" = "Ứng dụng:";
+"FirstCopyTime" = "Sao chép lần đầu:";
+"LastCopyTime" = "Sao chép lần cuối:";
+"NumberOfCopies" = "Số lần sao chép:";
+"PinKey" = "Nhấn {pinKey} để ghim.";
+"UnpinKey" = "Nhấn {pinKey} để bỏ ghim.";
+"DeleteKey" = "Nhấn {deleteKey} để xóa.";
+"OpenPreview" = "Nhấn {previewKey} để hiển thị bản xem trước.";
+"ClosePreview" = "Nhấn {previewKey} để ẩn bản xem trước.";
+"Dimensions" = "Kích thước:";
+"CopyExtractedText" = "Sao chép văn bản đã trích xuất.";

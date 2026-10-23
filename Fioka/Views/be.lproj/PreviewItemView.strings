@@ -1,0 +1,11 @@
+"Application" = "Дадатак:";
+"FirstCopyTime" = "Час першага капіявання:";
+"NumberOfCopies" = "Колькасць капіяванняў:";
+"LastCopyTime" = "Час апошняга капіявання:";
+"PinKey" = "Націсніце {pinKey}, каб замацаваць.";
+"UnpinKey" = "Націсніце {pinKey}, каб адмацаваць.";
+"DeleteKey" = "Націсніце {deleteKey}, каб выдаліць.";
+"OpenPreview" = "Націсніце {previewKey}, каб паказаць перадпрагляд.";
+"ClosePreview" = "Націсніце {previewKey}, каб схаваць перадпрагляд.";
+"Dimensions" = "Памеры:";
+"CopyExtractedText" = "Скапіяваць распазнаны тэкст.";

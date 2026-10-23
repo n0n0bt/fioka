@@ -1,0 +1,10 @@
+"Title" = "고급";
+"TurnOff" = "끄기";
+"TurnOffDescription" = "일시적으로 모든 새로운 복사를 무시합니다.\n중요한 데이터를 복사하는 동안 프로그래밍 방식을 이용해 어플리케이션을 비활성화할 수 있습니다.";
+"TurnOffShellScript" = "defaults write com.naumchedev.fioka ignoreEvents true\n# 데이터 복사\ndefaults write com.naumchedev.fioka ignoreEvents false";
+"TurnOffViaMenuIconDescription" = "⌥를 누른 상태에서 메뉴 아이콘을 클릭할 수도 있습니다.\n다음 사본만 무시하려면 ⌥⇧로 클릭하십시오.";
+"TurnOffNextShellScript" = "defaults write com.naumchedev.fioka ignoreOnlyNextEvent true\n# 데이터 복사";
+"ClearHistoryOnQuit" = "종료시 기록 지우기";
+"ClearHistoryOnQuitTooltip" = "애플리케이션을 종료하기 전에 고정 해제된 모든 항목을 자동으로 제거합니다.";
+"ClearSystemClipboard" = "시스템 클립보드도 지우기";
+"ClearSystemClipboardTooltip" = "활성화되면 기록을 지우면 현재 시스템 클립보드도 지워집니다.";

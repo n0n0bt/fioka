@@ -1,0 +1,14 @@
+"Title" = "Penyimpanan";
+"Save" = "Simpan:";
+"Files" = "Berkas";
+"Images" = "Gambar";
+"Text" = "Teks";
+"SaveDescription" = "Mengubah jenis konten tersalin yang disimpan.";
+"Size" = "Ukuran:";
+"SizeTooltip" = "Jumlah item riwayat untuk disimpan.\nDefault: 200.";
+"CurrentSizeTooltip" = "Ukuran saat ini pada cakram.";
+"SortBy" = "Menurut:";
+"LastCopiedAt" = "Waktu menyalin terakhir";
+"FirstCopiedAt" = "Waktu menyalin pertama";
+"NumberOfCopies" = "Jumlah salinan";
+"SortByTooltip" = "Bawaan: Waktu menyalin terakhir.";
