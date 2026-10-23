@@ -19,6 +19,9 @@ struct CardDrumView: View {
   private static let turn: Double = 38
 
   @State private var scrollMonitor: Any?
+  /// 0 while the bar opens, with every card folded behind the front one;
+  /// 1 once they have fanned out onto the drum.
+  @State private var spread: Double = 1
   @State private var scrollAccumulator: CGFloat = 0
 
   private var items: [HistoryItemDecorator] {
@@ -57,12 +60,16 @@ struct CardDrumView: View {
       appState.navigator.isKeyboardNavigating = true
       if scenePhase == .active {
         appState.navigator.select(item: appState.history.unpinnedItems.first ?? appState.history.pinnedItems.first)
+        fanOut()
         startScrollMonitor()
       } else {
         stopScrollMonitor()
       }
     }
-    .onAppear(perform: startScrollMonitor)
+    .onAppear {
+      fanOut()
+      startScrollMonitor()
+    }
     .onDisappear(perform: stopScrollMonitor)
   }
 
@@ -89,13 +96,23 @@ struct CardDrumView: View {
             .onTapGesture { appState.navigator.select(item: item) }
         }
       }
-      .scaleEffect(1 - distance * 0.14)
-      .rotation3DEffect(.degrees(Double(-offset) * Self.turn), axis: (0, 1, 0), perspective: 0.55)
-      .opacity(1 - Double(distance) * 0.22)
+      .scaleEffect(1 - distance * 0.14 * spread)
+      .rotation3DEffect(.degrees(Double(-offset) * Self.turn * spread), axis: (0, 1, 0), perspective: 0.55)
+      .opacity((1 - Double(distance) * 0.22) * (isCentre ? 1 : spread))
       .blur(radius: distance * 0.6)
-      .offset(x: CGFloat(offset) * Self.spacing)
+      .offset(x: CGFloat(offset) * Self.spacing * spread)
+      // Nearer cards land first, so the drum deals itself out from the front.
+      .animation(.spring(response: 0.5, dampingFraction: 0.78).delay(Double(distance) * 0.05), value: spread)
       .zIndex(-Double(distance))
       .transition(.opacity)
+  }
+
+  /// Folds the cards behind the front one, then lets them fan out.
+  private func fanOut() {
+    var fold = Transaction()
+    fold.disablesAnimations = true
+    withTransaction(fold) { spread = 0 }
+    DispatchQueue.main.async { spread = 1 }
   }
 
   /// A drag across the drum spins it, one card per step.

@@ -84,10 +84,15 @@ front, ±3 neighbours sit on a drum (rotated, scaled, faded), only the front car
 takes clicks and a click on a side card turns to it; ←/→, drags and scroll-wheel
 (local `NSEvent` monitor) spin it. `CardCarouselView`, the flat strip, is behind
 `defaults write com.naumchedev.fioka cardDrum -bool false`. Both render
-`CardItemView`. The drum has no panel: `DrumGlowView` (a shadow pool
-plus a brand-colour glow) replaces `PanelBackdropView`, and `FloatingPanel`
+`CardItemView`. The drum has no panel: `DrumGlowView` (a frost rising from
+the window's bottom, and under the cards a thin line of light in the brand
+colours that drift along it; no blobs or ellipses, which read as a shape
+over whatever is behind) replaces `PanelBackdropView`, and `FloatingPanel`
 drops its rounded clip and window shadow, so the window is clear. It does not
-wrap: it opens on the newest with nothing to its left (`CardDrumView.offset`). Selection and keyboard navigation still go through `NavigationManager`, whose `highlightNext`/`highlightPrevious` are direction-agnostic — left/right arrows are mapped onto them in `KeyChord`, alongside up/down.
+wrap: it opens on the newest with nothing to its left (`CardDrumView.offset`).
+On open the cards fan out from the front one (`spread`, nearer cards first),
+and the selection ring's gradient turns slowly (`SelectionRing` in
+`CardItemView`). Selection and keyboard navigation still go through `NavigationManager`, whose `highlightNext`/`highlightPrevious` are direction-agnostic — left/right arrows are mapped onto them in `KeyChord`, alongside up/down.
 
 ### Card actions
 

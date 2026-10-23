@@ -68,8 +68,7 @@ struct CardItemView: View {
     // Selection is a ring in the brand gradient, just outside the card.
     .overlay {
       if item.isSelected {
-        RoundedRectangle(cornerRadius: Self.cornerRadius + 4, style: .continuous)
-          .strokeBorder(Brand.gradient, lineWidth: 3.5)
+        SelectionRing(cornerRadius: Self.cornerRadius + 4)
           .padding(-4)
       }
     }
@@ -291,5 +290,28 @@ private struct PositionBadgeLabelStyle: LabelStyle {
         .font(.system(size: 12, weight: .medium).monospacedDigit())
     }
     .foregroundStyle(.secondary)
+  }
+}
+
+/// The selected card's ring: the logo's colours going round it, slowly, so the
+/// card in front feels lit rather than outlined.
+private struct SelectionRing: View {
+  var cornerRadius: CGFloat
+  @State private var turning = false
+
+  var body: some View {
+    // The gradient turns and the ring is cut out of it. Scaled up so its
+    // corners stay covered while it rotates.
+    AngularGradient(colors: [Brand.pink, Brand.violet, Brand.cyan, Brand.violet, Brand.pink], center: .center)
+      .scaleEffect(1.5)
+      .rotationEffect(.degrees(turning ? 360 : 0))
+      .mask {
+        RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+          .strokeBorder(lineWidth: 3.5)
+      }
+      .allowsHitTesting(false)
+      .onAppear {
+        withAnimation(.linear(duration: 6).repeatForever(autoreverses: false)) { turning = true }
+      }
   }
 }

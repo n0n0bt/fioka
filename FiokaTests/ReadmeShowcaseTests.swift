@@ -64,7 +64,9 @@ class ReadmeShowcaseTests: XCTestCase {
     let readme = bar
       .padding(.horizontal, 44)
       .padding(.vertical, 44)
-      .background { DrumGlowView(painted: true) }
+      // Raised so its shelf of light runs under the cards, as in the app,
+      // rather than along the bottom of this image's extra margin.
+      .background { DrumGlowView(painted: true).padding(.bottom, 46) }
       .fixedSize()
     try write(readme.background { wallpaper.clipped() }, to: "card-bar.png")
 
