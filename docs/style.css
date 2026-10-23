@@ -132,10 +132,12 @@ h1, h2, h3 {
 
 /* The glow behind the glass: the icon's three colours, very soft. */
 .glass { isolation: isolate; }
+/* Stretched down so the glow reaches under the drum; otherwise the white
+   ribs vanish on the plain background there and leave a blank band. */
 .glass::before {
   content: "";
   position: absolute;
-  inset: -10%;
+  inset: -10% -10% -40%;
   z-index: -2;
   background:
     radial-gradient(38% 46% at 18% 30%, rgb(247 107 168 / 0.42), transparent 70%),
@@ -206,34 +208,94 @@ h1 {
 
 .hint { margin: 22px 0 0; color: var(--muted); font-size: 15px; }
 
-/* The card bar, sitting on the screen's bottom edge. In the flow, so the
-   copy above can never end up behind it. */
-.bar {
+/* The card bar, live. drum.js places each card the way CardDrumView does in
+   the app (offset, turn, scale, fade, blur) and GSAP animates between them.
+   --card is the card's own size; its image is 252/232 of that, the extra
+   being room for the card's shadow. */
+.drum {
+  --card: clamp(168px, 15.5vw, 232px);
   position: relative;
+  isolation: isolate;
+  margin: clamp(28px, 4vw, 48px) -24px 0;
+  padding: 0 0 clamp(40px, 4.5vw, 64px);
+  outline: none;
+}
+.js .drum { visibility: hidden; }
+
+/* The shadow pool under the cards, fading out well inside the hero. */
+.drum::before {
+  content: "";
+  position: absolute;
   left: 50%;
-  /* The render has wide clear margins for its frost to fade out in. The hero
-     must hold all of it: tucking it under the hero's edge cuts the fade off
-     in a straight line. */
-  width: min(1360px, 124%);
-  margin-top: -2%;
-  margin-bottom: 0;
-  transform: translate(-50%, 0);
-}
-.bar img { width: 100%; }
-
-@media (prefers-reduced-motion: no-preference) {
-  .bar { animation: open-bar 0.75s cubic-bezier(0.2, 0.9, 0.25, 1.06) 0.35s both; }
-  .bar.closing { animation: close-bar 0.22s ease-in both; }
+  top: 58%;
+  width: min(1400px, 110%);
+  height: 90%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgb(23 21 31 / 0.2), rgb(23 21 31 / 0.08) 45%, transparent);
+  pointer-events: none;
+  z-index: -1;
 }
 
-@keyframes open-bar {
-  from { transform: translate(-50%, 105%); opacity: 0.4; }
-  to { transform: translate(-50%, 0); opacity: 1; }
+.drum-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min(360px, 70%);
+  height: 32px;
+  margin: 0 auto 18px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgb(128 128 128 / 0.12);
+  color: rgb(115 115 115);
+  font-size: 14px;
 }
-@keyframes close-bar {
-  from { transform: translate(-50%, 0); }
-  to { transform: translate(-50%, 105%); }
+
+.drum-stage {
+  position: relative;
+  height: calc(var(--card) * 1.12);
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
+.drum-stage.dragging { cursor: grabbing; }
+
+.drum-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--card);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+}
+.drum-card img {
+  position: absolute;
+  inset: calc(var(--card) * -10 / 232);
+  width: calc(100% + var(--card) * 20 / 232);
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+/* The selection ring in the brand gradient, just outside the front card,
+   as in the app: 4pt out, 3.5pt wide, on a 232pt card. */
+.drum-card::after {
+  content: "";
+  position: absolute;
+  inset: -1.72%;
+  padding: 1.51%;
+  border-radius: 7.76%;
+  background: linear-gradient(135deg, var(--pink), var(--violet), var(--cyan));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+}
+.drum-card.front::after { opacity: 1; }
+.drum:focus-visible .drum-card.front::after { box-shadow: 0 0 0 6px rgb(110 107 255 / 0.25); }
 
 /* ---------- Features ---------- */
 
@@ -445,12 +507,7 @@ h2 {
   .smallprint { grid-template-columns: 1fr; }
   .footer { grid-template-columns: 1fr; }
   .stage { border-radius: 0; }
-  /* Centred on the front card, drawn larger so it stays readable; the
-     drum's sides run off both edges evenly. */
-  .bar { width: 260%; margin-top: -10%; margin-bottom: -12%; }
-  /* The hero is short here: stretch the glow down so the glass's ribs still
-     show under the cards instead of fading to a blank band. */
-  .glass::before { inset: -10% -10% -45%; }
+  .drum { --card: 172px; }
 }
 
 @media (max-width: 560px) {

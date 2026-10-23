@@ -11,7 +11,8 @@
   <meta property="og:url" content="https://n0n0bt.github.io/fioka/">
   <link rel="canonical" href="https://n0n0bt.github.io/fioka/">
   <link rel="icon" href="assets/favicon.png">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=11">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -45,10 +46,24 @@
         </div>
         <p class="hint">Press <kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> to open it again</p>
       </div>
-      <div class="bar" aria-hidden="true">
-        <img src="assets/card-bar.png?v=6" alt="" width="1872" height="566">
+      <!-- The card bar, live: the app's own cards (rendered by
+           ReadmeShowcaseTests) on a drum that drum.js turns with GSAP. -->
+      <div class="drum" id="drum" tabindex="0" role="group" aria-roledescription="carousel" aria-label="The card bar: your recent copies on a drum, newest first. Use the left and right arrow keys to turn it.">
+        <div class="drum-search" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="13" height="13"><circle cx="6.8" cy="6.8" r="4.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Type to search…</span>
+        </div>
+        <div class="drum-stage" id="drum-stage">
+          <div class="drum-card" data-index="0"><img src="assets/drum/card-0.png" alt="Text from Notes, 2 minutes ago: Launch checklist. Record the demo video, write the release notes, ship Fioka 1.0 on Friday." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="1"><img src="assets/drum/card-1.png" alt="Code from Xcode, 9 minutes ago: a Swift function, greet." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="2"><img src="assets/drum/card-2.png" alt="Link from Safari, 25 minutes ago: github.com/n0n0bt/fioka." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="3"><img src="assets/drum/card-3.png" alt="Image from Preview, 48 minutes ago: a sunset over mountains." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="4"><img src="assets/drum/card-4.png" alt="Text from Messages, 1 hour ago: Coffee on Thursday at 10? I'll bring the sketches." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="5"><img src="assets/drum/card-5.png" alt="Colour from VS Code, 2 hours ago: #7C86FF." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="6"><img src="assets/drum/card-6.png" alt="Text from Notes, 3 hours ago: Quarterly numbers." width="252" height="252" draggable="false"></div>
+          <div class="drum-card" data-index="7"><img src="assets/drum/card-7.png" alt="File from Finder, 5 hours ago: Q3 Report.pdf." width="252" height="252" draggable="false"></div>
+        </div>
       </div>
-      <p class="visually-hidden">The card bar: a row of recent copies, including a note, a code snippet, a link, a photo, a colour and a PDF, each tinted by the app it came from.</p>
     </section>
 
     <section class="feature" id="clipboard" aria-labelledby="clipboard-title">
@@ -199,7 +214,11 @@ cd fioka
     </nav>
   </footer>
 
-  <script src="site.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="drum.js?v=2"></script>
+  <script src="motion.js?v=1"></script>
+  <script src="site.js?v=2"></script>
   <script src="desktop.js"></script>
 </body>
 </html>

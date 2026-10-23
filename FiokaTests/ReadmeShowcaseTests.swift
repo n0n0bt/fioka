@@ -93,6 +93,35 @@ class ReadmeShowcaseTests: XCTestCase {
     try write(website, to: "assets/card-bar.png")
   }
 
+  /// The website's live drum: each card on its own, newest first, for
+  /// docs/drum.js to place and turn. The selection ring is drawn by the page,
+  /// so it can move to whichever card is in front. The padding leaves room
+  /// for the card's shadow.
+  func testRenderDrumCards() throws {
+    let minute: TimeInterval = 60
+    let items: [HistoryItemDecorator] = [
+      item(text: "Launch checklist\n• Record the demo video\n• Write the release notes\n• Ship Fioka 1.0 on Friday",
+           app: "com.apple.Notes", ago: 2 * minute),
+      item(text: "func greet(_ name: String) -> String {\n  let greeting = \"Hello, \\(name)!\"\n  return greeting\n}",
+           app: "com.apple.dt.Xcode", ago: 9 * minute),
+      item(text: "https://github.com/n0n0bt/fioka", app: "com.apple.Safari", ago: 25 * minute),
+      item(image: landscape(), app: "com.apple.Preview", ago: 48 * minute),
+      item(text: "Coffee on Thursday at 10? I'll bring the sketches", app: "com.apple.MobileSMS", ago: 70 * minute),
+      item(text: "#7C86FF", app: "com.microsoft.VSCode", ago: 2 * 3600),
+      item(text: "Quarterly numbers\nRevenue up 18%\nChurn down to 2.1%", app: "com.apple.Notes", ago: 3 * 3600),
+      item(file: URL(fileURLWithPath: "/Users/jane/Documents/Q3 Report.pdf"), app: "com.apple.finder", ago: 5 * 3600)
+    ]
+    try FileManager.default.createDirectory(at: docs.appendingPathComponent("assets/drum"), withIntermediateDirectories: true)
+    for (index, item) in items.enumerated() {
+      let card = CardItemView(item: item, position: index + 1)
+        .padding(10)
+        .environment(AppState.shared)
+        .environment(\.colorScheme, .light)
+        .fixedSize()
+      try write(card, to: "assets/drum/card-\(index).png")
+    }
+  }
+
   // MARK: - Drop wheel
 
   func testRenderWheels() throws {

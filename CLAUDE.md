@@ -186,10 +186,28 @@ there, as with text capture.
 `docs/` is the landing page, served by GitHub Pages from `main` → `/docs`. Plain
 HTML, CSS and JS, no build step; preview with `python3 -m http.server` inside
 `docs/`. Its images come from the app's real views via `ReadmeShowcaseTests`
-(into `docs/` and `docs/assets/`). `desktop.js` is a pretend Mac desktop for
-the drop wheel: pointer-event dragging, not HTML5 drag and drop, because the
-browser withholds key events during a native drag and the gesture needs real
-⇧/⌘/⌃ presses. It reuses the wheel's geometry, converts images for real in the
+(into `docs/` and `docs/assets/`).
+
+- **Hero drum** (`drum.js`): the card bar is live, not a picture. Each card is
+  rendered on its own by `testRenderDrumCards` (`docs/assets/drum/card-N.png`,
+  with 10pt of room for its shadow); the selection ring is CSS, so it follows
+  the front card. `drum.js` places them with `CardDrumView`'s numbers
+  (spacing, turn, shrink, fade, blur) and GSAP animates one value, `pos`.
+  Like the app it never wraps and opens on the newest. It autoplays, and ←/→
+  (while focused or hovered), drag with flick, sideways trackpad swipes,
+  clicks on side cards and ⇧⌘V (`window.fiokaDrum.toggle`) all drive it.
+- **Motion** (`motion.js`): hero copy intro, the banner's tilt, and
+  ScrollTrigger reveals of each section. Skipped entirely under
+  `prefers-reduced-motion`, as is the drum's autoplay.
+- **GSAP** 3.15 and ScrollTrigger are vendored in `docs/vendor/` (free under
+  GSAP's standard licence), not loaded from a CDN.
+- **Demo desktop** (`desktop.js`): a pretend Mac desktop for the drop wheel.
+  Pointer-event dragging, not HTML5 drag and drop, because the browser
+  withholds key events during a native drag and the gesture needs real
+  ⇧/⌘/⌃ presses. It reuses the wheel's geometry and converts images for real
+  in the browser.
+
+Bump the `?v=` on a CSS or JS link when changing it; GitHub Pages caches.
 
 ## Things that will bite you
 

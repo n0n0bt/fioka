@@ -1,20 +1,12 @@
 // Three small behaviours, each answering something the visitor does.
 
-// 1. ⇧⌘V closes and reopens the hero's card bar, as it toggles the bar in the app.
-const bar = document.querySelector(".bar");
+// 1. ⇧⌘V closes and reopens the hero's card bar, as it toggles the bar in the
+//    app. drum.js does the animation.
 document.addEventListener("keydown", (event) => {
   if (event.key.toLowerCase() !== "v" || !event.metaKey || !event.shiftKey) return;
   event.preventDefault();
-  if (!bar) return;
-  bar.classList.add("closing");
-  bar.addEventListener("animationend", () => {
-    bar.classList.remove("closing");
-    // Restart the opening animation.
-    bar.style.animation = "none";
-    void bar.offsetWidth;
-    bar.style.animation = "";
-  }, { once: true });
-  bar.scrollIntoView({ behavior: "smooth", block: "end" });
+  document.getElementById("drum")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  window.fiokaDrum?.toggle();
 });
 
 // 2. The wheel switcher: the keycaps, and the real modifier keys while the
@@ -35,12 +27,19 @@ function show(mode) {
   if (!wheel || !image || image.dataset.mode === mode) return;
   image.dataset.mode = mode;
   caps.forEach((cap) => cap.setAttribute("aria-pressed", String(cap.dataset.mode === mode)));
-  image.classList.add("swapping");
-  setTimeout(() => {
-    image.src = wheel.src;
-    image.alt = wheel.alt;
-    image.classList.remove("swapping");
-  }, 120);
+  const swap = () => { image.src = wheel.src; image.alt = wheel.alt; };
+  if (!window.gsap || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    image.classList.add("swapping");
+    setTimeout(() => { swap(); image.classList.remove("swapping"); }, 120);
+    return;
+  }
+  // The old wheel spins away and the new one spins in, as it opens in the app.
+  gsap.killTweensOf(image);
+  gsap.timeline()
+    .to(image, { rotation: -25, scale: 0.88, autoAlpha: 0, duration: 0.14, ease: "power2.in" })
+    .add(swap)
+    .fromTo(image, { rotation: 25, scale: 0.88, autoAlpha: 0 },
+      { rotation: 0, scale: 1, autoAlpha: 1, duration: 0.5, ease: "back.out(1.7)" });
 }
 caps.forEach((cap) => cap.addEventListener("click", () => show(cap.dataset.mode)));
 if (image) image.dataset.mode = "formats";
