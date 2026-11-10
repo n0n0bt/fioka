@@ -1,0 +1,16 @@
+"Title" = "Shortcuts";
+"GlobalHeader" = "Global — work in any app";
+"Open" = "Open card bar:";
+"OpenTooltip" = "Opens the card bar.\nDefault: ⇧⌘V.";
+"CaptureText" = "Capture text:";
+"CaptureTextTooltip" = "Select a screen region and copy the text in it.\nDefault: ⇧⌘2.";
+"Screenshot" = "Screenshot editor:";
+"ScreenshotTooltip" = "Take a screenshot and open it in the editor.\nDefault: ⌃⌥⌘4.";
+"BarHeader" = "In the card bar";
+"Pin" = "Pin:";
+"PinTooltip" = "Pin the selected card.\nDefault: ⌥P.";
+"Delete" = "Delete:";
+"DeleteTooltip" = "Delete the selected card.\nDefault: ⌥⌫.";
+"Preview" = "Preview:";
+"PreviewTooltip" = "Show a preview with more information.\nDefault: ⌃Space.";
+"Reset" = "Restore defaults";
