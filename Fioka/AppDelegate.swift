@@ -12,6 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     statusItem.behavior = .removalAllowed
     statusItem.button?.action = #selector(performStatusItemClick)
+    statusItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
     statusItem.button?.image = Defaults[.menuIcon].image
     statusItem.button?.imagePosition = .imageLeft
     statusItem.button?.target = self
@@ -180,6 +181,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc
   private func performStatusItemClick() {
     if let event = NSApp.currentEvent {
+      // Right-click (or ⌃-click, the Mac's other right-click) opens the app menu.
+      if event.type == .rightMouseUp || event.modifierFlags.contains(.control) {
+        showStatusItemMenu()
+        return
+      }
+
       let modifierFlags = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
 
       if modifierFlags.contains(.option) {
@@ -194,6 +201,60 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     panel.toggle(height: AppState.shared.popup.height, at: .statusItem)
+  }
+
+  private lazy var statusItemMenu: NSMenu = {
+    let menu = NSMenu()
+    let about = NSMenuItem(
+      title: NSLocalizedString("status_menu_about", value: "About Fioka", comment: ""),
+      action: #selector(statusMenuAbout),
+      keyEquivalent: ""
+    )
+    let settings = NSMenuItem(
+      title: NSLocalizedString("status_menu_settings", value: "Settings…", comment: ""),
+      action: #selector(statusMenuSettings),
+      keyEquivalent: ","
+    )
+    let quit = NSMenuItem(
+      title: NSLocalizedString("status_menu_quit", value: "Quit Fioka", comment: ""),
+      action: #selector(statusMenuQuit),
+      keyEquivalent: "q"
+    )
+    for item in [about, settings, quit] {
+      item.target = self
+    }
+    menu.addItem(about)
+    menu.addItem(.separator())
+    menu.addItem(settings)
+    menu.addItem(.separator())
+    menu.addItem(quit)
+    return menu
+  }()
+
+  private func showStatusItemMenu() {
+    if panel.isPresented {
+      panel.close()
+    }
+    // Attach the menu only for this click, so a plain left-click keeps
+    // toggling the card bar; the status item pops it up and tracks it.
+    statusItem.menu = statusItemMenu
+    statusItem.button?.performClick(nil)
+    statusItem.menu = nil
+  }
+
+  @objc
+  private func statusMenuAbout() {
+    AppState.shared.openAbout()
+  }
+
+  @MainActor @objc
+  private func statusMenuSettings() {
+    AppState.shared.openPreferences()
+  }
+
+  @objc
+  private func statusMenuQuit() {
+    AppState.shared.quit()
   }
 
   private func synchronizeMenuIconText() {

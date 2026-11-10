@@ -1,0 +1,16 @@
+"Title" = "Tastenkürzel";
+"GlobalHeader" = "Global – funktionieren in jeder App";
+"Open" = "Kartenleiste öffnen:";
+"OpenTooltip" = "Öffnet die Kartenleiste.\nStandard: ⇧⌘V.";
+"CaptureText" = "Text erfassen:";
+"CaptureTextTooltip" = "Bildschirmbereich auswählen und den enthaltenen Text kopieren.\nStandard: ⇧⌘2.";
+"Screenshot" = "Screenshot-Editor:";
+"ScreenshotTooltip" = "Screenshot aufnehmen und im Editor öffnen.\nStandard: ⌃⌥⌘4.";
+"BarHeader" = "In der Kartenleiste";
+"Pin" = "Anheften:";
+"PinTooltip" = "Ausgewählte Karte anheften.\nStandard: ⌥P.";
+"Delete" = "Löschen:";
+"DeleteTooltip" = "Ausgewählte Karte löschen.\nStandard: ⌥⌫.";
+"Preview" = "Vorschau:";
+"PreviewTooltip" = "Vorschau mit weiteren Informationen anzeigen.\nStandard: ⌃Leertaste.";
+"Reset" = "Standard wiederherstellen";

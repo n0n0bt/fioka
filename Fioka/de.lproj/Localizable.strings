@@ -30,3 +30,7 @@
 "history_item_image_accessibility_label_no_app" = "Bild, %d×%d";
 "history_item_image_accessibility_generic" = "Bild";
 "toolbar_remove_paste_stack_action" = "Einfügestapel stoppen";
+
+"status_menu_about" = "Über Fioka";
+"status_menu_settings" = "Einstellungen …";
+"status_menu_quit" = "Fioka beenden";
